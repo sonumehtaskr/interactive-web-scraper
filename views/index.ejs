@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Web Scraper</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>🕸️ Interactive Web Scraper</h1>
+  <form action="/scrape" method="POST">
+    <input type="text" name="url" placeholder="Enter URL" required>
+    <input type="text" name="tag" placeholder="HTML Tag (e.g. h2, a)" required>
+    <input type="text" name="className" placeholder="Class Name (optional)">
+    <button type="submit">Scrape</button>
+  </form>
+  <div>
+    <% if (results) { %>
+      <h2>Scraped Results</h2>
+      <ul>
+        <% results.forEach(r => { %>
+          <li><%= r %></li>
+        <% }); %>
+      </ul>
+    <% } %>
+  </div>
+</body>
+</html>
